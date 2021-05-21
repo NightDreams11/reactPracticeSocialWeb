@@ -26,3 +26,7 @@ const App = (props) => {
 }
 
 export default App;
+
+// Route следит за URL и в зависимости от изменений URL, выполняет нужную компоненту.
+// За изменение URL в браузере отвечает Navlink
+// Route и Navlink не зависят друг от друга
