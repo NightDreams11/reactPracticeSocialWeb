@@ -4,11 +4,11 @@ import classes from './Dialogs.module.css'
 import Message from './Message/Message';
 
 const Dialogs = (props) => {
-    
+
     let state = props.dialogsPage;
 
-    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} id={d.id}></DialogItem>);
-    let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id}></Message>)
+    let dialogsElements = state.dialogs.map(d => <DialogItem name={d.name} key={d.id} id={d.id}></DialogItem>);
+    let messagesElements = state.messages.map(m => <Message message={m.message} id={m.id} key={m.id}></Message>)
     let newMessageBody = state.newMessageBody;
 
     let onSendMessageClick = () => {
@@ -17,7 +17,7 @@ const Dialogs = (props) => {
     let onNewMessageChange = (e) => {
         let body = e.target.value;
         props.updateNewMessageBody(body);
-    } 
+    }
     return (
         <div className={classes.dialogs}>
             <div className={classes.dialogsItems}>
@@ -32,4 +32,4 @@ const Dialogs = (props) => {
     )
 }
 
-export default Dialogs; 
+export default Dialogs;
