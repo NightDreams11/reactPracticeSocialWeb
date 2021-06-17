@@ -4,7 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Music from './components/Music/Music';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 import Settings from './components/Settings/Settings';
 import News from './components/News/News';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
@@ -17,7 +17,7 @@ const App = (props) => {
       <Navbar></Navbar>
       <div className='app-wrapper-content'>
         <Route path='/dialogs' render={() => <DialogsContainer></DialogsContainer>}></Route>
-        <Route path='/profile' render={() => <Profile></Profile>}></Route>
+        <Route path='/profile' render={() => <ProfileContainer></ProfileContainer>}></Route>
         <Route path='/users' render={() => <UsersContainer></UsersContainer>}></Route>
         <Route path='/news' component={News}></Route>
         <Route path='/music' component={Music}></Route>
