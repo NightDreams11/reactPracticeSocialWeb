@@ -16,7 +16,7 @@ const ProfileInfo = (props) => {
       </div>
       <div className={classes.descriptionBlock} src='https://blog.matcharesident.com/wp-content/uploads/2019/07/iStock-944453634-750x450.jpg'>
         <img src={props.profile.photos.large}></img>
-        <ProfileStatus status={"Hello"}></ProfileStatus>
+        <ProfileStatus status={props.status} updateStatus={props.updateStatus}></ProfileStatus>
       </div>
     </div >
   )
