@@ -2,6 +2,7 @@ import React from 'react';
 import classes from './ProfileInfo.module.css'
 import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatus from './ProfileStatus'
+import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
 const ProfileInfo = (props) => {
 
@@ -16,7 +17,7 @@ const ProfileInfo = (props) => {
       </div>
       <div className={classes.descriptionBlock} src='https://blog.matcharesident.com/wp-content/uploads/2019/07/iStock-944453634-750x450.jpg'>
         <img src={props.profile.photos.large}></img>
-        <ProfileStatus status={props.status} updateStatus={props.updateStatus}></ProfileStatus>
+        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}></ProfileStatusWithHooks>
       </div>
     </div >
   )
