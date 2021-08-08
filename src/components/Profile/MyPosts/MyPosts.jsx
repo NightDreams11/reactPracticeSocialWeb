@@ -1,11 +1,13 @@
-import React from 'react';
+import React, { Component } from 'react';
 import classes from './MyPosts.module.css'
 import Post from './Post/Post';
 import { Field, reduxForm } from 'redux-form';
 import { maxLengthCreator, required } from '../../../utils/validators/validators';
 import { Textarea } from '../../common/FormsControls/FormsControls';
 
-const MyPosts = (props) => {
+const MyPosts = React.memo(props => { //Внутри метод подобный ShouldComponentUpdate
+
+  console.log("render yo")
   let postsElements = props.posts.map(p => <Post message={p.message} likesCount={p.likesCount} id={p.id}></Post>)
 
   let onAddPost = (values) => {
@@ -21,7 +23,7 @@ const MyPosts = (props) => {
       </div>
     </div>
   )
-}
+});
 
 const maxLenght10 = maxLengthCreator(10)
 
