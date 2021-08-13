@@ -4,9 +4,9 @@ import Preloader from '../../common/Preloader/Preloader';
 import ProfileStatus from './ProfileStatus'
 import ProfileStatusWithHooks from './ProfileStatusWithHooks';
 
-const ProfileInfo = (props) => {
+const ProfileInfo = ({ profile, status, updateStatus }) => {
 
-  if (!props.profile) {
+  if (!profile) {
     return <Preloader></Preloader>
   }
 
@@ -16,8 +16,8 @@ const ProfileInfo = (props) => {
         {/* <img src='https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg'></img> */}
       </div>
       <div className={classes.descriptionBlock} src='https://blog.matcharesident.com/wp-content/uploads/2019/07/iStock-944453634-750x450.jpg'>
-        <img src={props.profile.photos.large}></img>
-        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}></ProfileStatusWithHooks>
+        <img src={profile.photos.large}></img>
+        <ProfileStatusWithHooks status={status} updateStatus={updateStatus}></ProfileStatusWithHooks>
       </div>
     </div >
   )
