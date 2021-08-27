@@ -8,7 +8,7 @@ import { Textarea } from '../../common/FormsControls/FormsControls';
 const MyPosts = React.memo(props => { //Внутри метод подобный ShouldComponentUpdate
 
   console.log("render yo")
-  let postsElements = [...props.posts].reverse().map(p => <Post message={p.message} likesCount={p.likesCount} id={p.id}></Post>)
+  let postsElements = [...props.posts].reverse().map(p => <Post key={p.id} message={p.message} likesCount={p.likesCount} id={p.id}></Post>)
 
   let onAddPost = (values) => {
     props.addPost(values.newPostText);
